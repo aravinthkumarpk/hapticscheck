@@ -14,16 +14,21 @@ Demonstrates the usage of the Web Vibration API. Allows users to experience diff
 
 ## Browser Compatibility
 
-The Web Vibration API is supported in modern web browsers, including:
+The Web Vibration API is supported in modern web browsers:
 
 - Chrome (version 30+)
+
+Yet to test
+
 - Firefox (version 16+)
-- Edge (version 79+)
-- Safari (version 9.1+)
+- Edge (version 79+) [yet to test]
 - Opera (version 17+)
 
-May not work on all devices, as it depends on hardware support.
+Says supported but not working
+- Safari (version 9.1+)
 
-## Docs to refer
+May not work on all devices, as it depends on hardware support also.
+
+## Reference doc
 
 - The Web Vibration API documentation: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)
