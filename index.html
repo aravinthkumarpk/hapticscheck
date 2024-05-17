@@ -3,90 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haptics Wohoo!</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-      background-color: #f5f5f5;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .button-container {
-      margin-bottom: 30px;
-    }
-
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      margin: 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    .input-container {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #333;
-    }
-
-    input {
-      padding: 10px;
-      width: 200px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-
-    small {
-      display: block;
-      margin-top: 5px;
-      color: #777;
-    }
-  </style>
+  <title>Haptics Tester</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Haptics Wohoo!</h1>
-
-  <div class="button-container">
-    <button id="vibrateBtn1">Vibrate (200ms)</button>
-    <button id="shortVibrateBtn">Short Vibrate (100ms)</button>
-    <button id="longVibrateBtn">Long Vibrate (500ms)</button>
+  <div class="container">
+    <div class="header">
+      <h1>Haptics Tester</h1>
+    </div>
+    <div class="button-section">
+      <h2>Predefined Haptics</h2>
+      <div class="button-container">
+        <button id="shortVibrateBtn">
+          <span class="icon">⚡</span>
+          <span class="text">Short (100ms)</span>
+        </button>
+        <button id="vibrateBtn1">
+          <span class="icon">⚡</span>
+          <span class="text">Medium (200ms)</span>
+        </button>
+        <button id="longVibrateBtn">
+          <span class="icon">⚡</span>
+          <span class="text">Long (500ms)</span>
+        </button>
+        <button id="samplePatternBtn">
+          <span class="icon">⚡</span>
+          <span class="text">Sample Pattern</span>
+        </button>
+      </div>
+    </div>
+    <div class="custom-section">
+      <h2>Custom Haptics</h2>
+      <div class="input-container">
+        <label for="duration">Duration (ms)</label>
+        <div class="input-wrapper">
+          <input type="number" id="duration" placeholder="Enter duration">
+          <button id="durationBtn">Gooo!</button>
+        </div>
+        <div class="error-message" id="durationError"></div>
+      </div>
+      <div class="input-container">
+        <label for="pattern">Pattern</label>
+        <div class="input-wrapper">
+          <input type="text" id="pattern" placeholder="Enter pattern">
+          <button id="patternBtn">Gooo!</button>
+        </div>
+        <div class="instructions">
+          <p>Create custom vibration patterns by entering a sequence of vibration durations separated by commas.</p>
+          <p><strong>Example:</strong> 200, 100, 200, 100, 200</p>
+          <ul>
+            <li>Each number represents the vibration duration in milliseconds.</li>
+            <li>Odd-indexed numbers (1st, 3rd, 5th, etc.) represent vibration durations.</li>
+            <li>Even-indexed numbers (2nd, 4th, 6th, etc.) represent pause durations between vibrations.</li>
+          </ul>
+          <p>For more information, refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API" target="_blank">Vibration API documentation</a>.</p>
+        </div>
+        <div class="error-message" id="patternError"></div>
+      </div>
+    </div>
   </div>
-
-  <h2>Custom Haptics</h2>
-
-  <div class="input-container">
-    <label for="duration">Vibration Duration (ms):</label>
-    <input type="number" id="duration" placeholder="Enter duration">
-  </div>
-
-  <div class="input-container">
-    <label for="pattern">Vibration Pattern (comma-separated):</label>
-    <input type="text" id="pattern" placeholder="Enter pattern">
-    <small>Example: 200, 100, 200, 100, 200</small>
-    <small>Enter a series of vibration durations in milliseconds, separated by commas.</small>
-  </div>
-
-  <button id="vibrateBtn">Vibrate</button>
-
   <script src="script.js"></script>
 </body>
 </html>
